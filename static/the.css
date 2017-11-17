@@ -2,9 +2,15 @@ body {
     margin: 0;
     font-family: Arial;
     background-color: #3498DB;
+<<<<<<< HEAD
     padding: 0px;
 }
 
+=======
+    padding: 50px;
+}
+/*
+>>>>>>> 644f8483b54bdafd9ccbbddc610f9fbaf1c84f44
 ul {
     list-style-type: none;
     margin: 0;
@@ -27,21 +33,33 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+<<<<<<< HEAD
     border-radius: 10px;
 }
 
 li a:hover:not(.active) {
     background-color: #777;
+=======
+}
+
+li a:hover:not(.active) {
+    background-color: red;
+>>>>>>> 644f8483b54bdafd9ccbbddc610f9fbaf1c84f44
 }
 
 .active {
     background-color: #c1c1c1;
 }
+<<<<<<< HEAD
 h1 {
     font-family: Arial;
 }
 
 h2 {
+=======
+
+h1 {
+>>>>>>> 644f8483b54bdafd9ccbbddc610f9fbaf1c84f44
     font-family: Arial;
 }
 
@@ -49,6 +67,16 @@ p {
     font-family: Arial;
 }
 
+<<<<<<< HEAD
+=======
+div {
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #1abc9c;
+    height: 1500px;
+}*/
+
+>>>>>>> 644f8483b54bdafd9ccbbddc610f9fbaf1c84f44
 * {
     box_sizing: border_box;
 }
@@ -60,14 +88,20 @@ p {
 .login {
     margin: 20px auto;
     width: 300px;
+<<<<<<< HEAD
     padding: 50px;
+=======
+>>>>>>> 644f8483b54bdafd9ccbbddc610f9fbaf1c84f44
 }
 
 .login-screen {
     background-color: #FFF;
     padding: 20px;
     border-radius: 5px;
+<<<<<<< HEAD
     box-shadow: 5px 5px 15px #000000;
+=======
+>>>>>>> 644f8483b54bdafd9ccbbddc610f9fbaf1c84f44
 }
 
 .app-title {
@@ -127,6 +161,7 @@ input:focus {
   display: block;
 	margin-top: 12px;
 }
+<<<<<<< HEAD
 
 .start {
     padding: 40px;
@@ -137,3 +172,5 @@ input:focus {
     width:50%;
 }
 
+=======
+>>>>>>> 644f8483b54bdafd9ccbbddc610f9fbaf1c84f44
