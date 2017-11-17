@@ -1,18 +1,14 @@
-<html>
-    <head>
-        <title>Coursework</title>
-        <!--connect to the css -->
-        <link rel="styleSheet" href="{{ url_for('static', filename='the.css')}}">
-    </head>
-    <body>
-        <ul>
-            <!--top bar-->
-            <li><a href="http://0.0.0.0:5000">Home</a></li>
-        </ul>
-
-        <div>
-            <h1>Home</h1>
-            <p>this is coursework 2</p>
-        </div> 
-    </body>
-</html>
+{% extends "main.html" %}
+{% block content %}
+{% if session['logged_in'] %}
+    <h1>Welcome Back</h1>
+    {% else %}
+    <h1>Hi there, first time? </h1>
+    <h2>If not why not <a href="http://0.0.0.0:5000/log">login</a></h2>
+    {% endif %}
+    
+    <input type="submit" name="submit" value="Bodys">
+    <input type="submit" name="submit" value="Neck">
+    <input type="submit" name="submit" value="Pickups">
+    <input type="submit" name="submit" value="Bridge">
+{% endblock %}
