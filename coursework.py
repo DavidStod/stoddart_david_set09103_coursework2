@@ -1,23 +1,15 @@
-<<<<<<< HEAD
 from flask import Flask
 from flask import Flask, flash, render_template, url_for, redirect, request, session, abort
-=======
 from flask import Flask, render_template, url_for, redirect, request, session, abort
->>>>>>> 644f8483b54bdafd9ccbbddc610f9fbaf1c84f44
 import os
 from sqlalchemy.orm import sessionmaker
 from tabledef import *
 engine = create_engine('sqlite:///tutorial.db', echo=True)
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 644f8483b54bdafd9ccbbddc610f9fbaf1c84f44
 app = Flask(__name__)
 
 @app.route('/')
 def home():
-<<<<<<< HEAD
     return render_template('home.html')
 
 @app.route('/log/', methods=['GET', 'POST'])
@@ -33,23 +25,18 @@ def basket():
         return render_template('login.html')
     else:
         return render_template('basket.html')
-=======
     if not session.get('logged_in'):
         return render_template('login.html')
     else:
         return "Hello David! <a href='/logout/'>Logout</a>"
 
->>>>>>> 644f8483b54bdafd9ccbbddc610f9fbaf1c84f44
 @app.route('/login/', methods=['POST'])
 def do_admin_login():
 
     POST_USERNAME = str(request.form['username'])
     POST_PASSWORD = str(request.form['password'])
-<<<<<<< HEAD
     
-=======
 
->>>>>>> 644f8483b54bdafd9ccbbddc610f9fbaf1c84f44
     Session = sessionmaker(bind=engine)
     s = Session()
     query = s.query(User).filter(User.username.in_([POST_USERNAME]), User.password.in_([POST_PASSWORD]) )
@@ -57,18 +44,13 @@ def do_admin_login():
     if result:
         session['logged_in'] = True
     else:
-<<<<<<< HEAD
         print('wrong password')
-    return login()
-=======
-        flask('wrong password!')
-    return home()
->>>>>>> 644f8483b54bdafd9ccbbddc610f9fbaf1c84f44
+        flash('wrong password!')
+        return log()
 
 @app.route('/logout/')
 def logout():
     session['logged_in'] = False
-<<<<<<< HEAD
     return login()
 
 @app.route('/get_the_order/')
@@ -93,14 +75,12 @@ def get_the_order():
 @app.route('/guitar/<name>/', methods=['GET', 'POST'])
 def guitar(name=None):
     return render_template('{0}.html'.format(name), name=name), 200
-=======
     return home()
 
 #open every page by reading it from the url
 #@app.route('/<name>/', methods=['GET', 'POST'])
 #def guitar(name=None):
 #    return render_template('{0}.html'.format(name), name=name), 200
->>>>>>> 644f8483b54bdafd9ccbbddc610f9fbaf1c84f44
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
