@@ -6,9 +6,10 @@
     <h1>Hi there, first time? </h1>
     <h2>If not why not <a href="http://0.0.0.0:5000/log">login</a></h2>
     {% endif %}
-    
-    <input type="submit" name="submit" value="Bodys" url="http://0.0.0.0:5000/guitar/body">
-    <input type="submit" name="submit" value="Neck">
-    <input type="submit" name="submit" value="Pickups">
-    <input type="submit" name="submit" value="Bridge">
+    <h2>This website is a guitar parts seller you can select what you want to view via the top navigation bar or by using the buttons bellow</h2> 
+    <a href="http://0.0.0.0:5000/guitar/body"><img src={{url_for('static', filename='images/image2.png')}} /><a>
+    <a href="http://0.0.0.0:5000/guitar/neck"><img src={{url_for('static', filename='images/image2.png')}} /><a>
+    <a href="http://0.0.0.0:5000/guitar/pickups"><img src={{url_for('static', filename='images/image2.png')}} /><a>
+    <a href="http://0.0.0.0:5000/guitar/bridge"><img src={{url_for('static', filename='images/image2.png')}} /><a>
+    <a href="http://0.0.0.0:5000/basket"><img src={{url_for('static', filename='images/image2.png')}} /><a>
 {% endblock %}

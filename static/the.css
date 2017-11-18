@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial;
-    background-color: #3498DB;
+    background-color: #1b557b;
     padding: 0px;
 }
 
@@ -131,6 +131,9 @@ input:focus {
 .start {
     padding: 40px;
     text-align: center;
+    width: 700px;
+    margin: auto;
+    background-color: #3498DB
 }
 
 .message {

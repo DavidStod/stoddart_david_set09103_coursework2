@@ -10,6 +10,8 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
+    #generate_img("images/image2");
+    #return '<ing src=' + url_for('static',filename='images/image2') + '>'
     return render_template('home.html')
 
 @app.route('/log/', methods=['GET', 'POST'])
@@ -25,10 +27,6 @@ def basket():
         return render_template('login.html')
     else:
         return render_template('basket.html')
-    if not session.get('logged_in'):
-        return render_template('login.html')
-    else:
-        return "Hello David! <a href='/logout/'>Logout</a>"
 
 @app.route('/login/', methods=['POST'])
 def do_admin_login():
@@ -46,7 +44,7 @@ def do_admin_login():
     else:
         print('wrong password')
         flash('wrong password!')
-        return log()
+    return login()
 
 @app.route('/logout/')
 def logout():
