@@ -69,11 +69,27 @@ def get_the_order():
 
     return jsonify(result=the_order_list + sum_list)
 
+@app.route('/guitar/<name>', methods=['GET', 'POST'])
+def maths():
+    for i in range(100):
+        if form.validate_on_submit():
+            if 'Add to basket' in request.form:
+                count = count + 1
+                return home()
+                print(count)
+            elif 'Remove from basket' in request.form:
+                if count == 0:
+                    count = count
+                    print(count)
+                elif count != 0:
+                    count = count - 1
+                    print(count)
+
 #open every page by reading it from the url
 @app.route('/guitar/<name>/', methods=['GET', 'POST'])
 def guitar(name=None):
+    count = 0
     return render_template('{0}.html'.format(name), name=name), 200
-    return home()
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)

@@ -1,30 +1,5 @@
 {% extends "main.html" %}
 {% block content %}
 <h1>This is the basket</h1>
-        {% if session.logged_in %}
-
-            {% if session.theOrder %}
-                <div class="confirm-cancel">
-                    <a href="{{url_for('flush')}}"><i class="fa fa-close fa-3x btn-danger"></i></a>
-                    <a href="{{url_for('order_dish')}}"><i class="fa fa-check fa-3x btn-success"></i></a>
-                </div>
-            {% endif %}
-
-            <li class='main'><a href='/#main'><span>Main</span></a></li>
-            <li class="comfort"><a href='/#ckidki' ><span>Chief</span></a></li>
-            <li class="menu"><a href='/menu/' ><span>Menu</span></a></li>
-            <li class="order"><a href="/order/" ><span>Make an order</span></a></li>
-            <li class="contact"><a href='/#contact' ><span>Contact us</span></a></li>
-            <li class="last orders"><a href='/admin/' ><span>Admin</span></a></li>
-
-            {% if session.theOrder %}
-
-                <li class="basket"><i class="fa fa-shopping-basket fa-3x" style="color: #fff;"><p class="pull-left" id="bask" style="font-size: 19px; font-weight: 600; font-family: "Russo One",sans-serif;">{{session.get('theOrder')}} &nbspx{{session.get('price')}}</p></i></li>
-
-            {% else %}
-
-                <li class="basket"><i class="fa fa-shopping-basket fa-3x" style="color: #fff;"><p class="pull-left" id="bask" style="font-size: 19px; font-weight: 600; font-family: "Russo One",sans-serif;">0$ &nbsp&nbsp</p></i></li>
-
-            {% endif %}
-        {% endif %}
+<h2>The basket is currently under maintenance please try again another time</h2>
 {% endblock %}
