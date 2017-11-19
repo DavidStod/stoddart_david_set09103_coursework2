@@ -75,11 +75,6 @@ def guitar(name=None):
     return render_template('{0}.html'.format(name), name=name), 200
     return home()
 
-#open every page by reading it from the url
-#@app.route('/<name>/', methods=['GET', 'POST'])
-#def guitar(name=None):
-#    return render_template('{0}.html'.format(name), name=name), 200
-
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
     app.run(host='0.0.0.0', debug=True)

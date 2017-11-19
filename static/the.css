@@ -34,10 +34,6 @@ li a:hover:not(.active) {
     background-color: #777;
 }
 
-li a:hover:not(.active) {
-    background-color: red;
-}
-
 .active {
     background-color: #c1c1c1;
 }
@@ -118,14 +114,14 @@ input:focus {
 }
 
 .btn:hover {
-  background-color: #2980B9;
+    background-color: #2980B9;
 }
  
 .login-link {
-  font-size: 12px;
-  color: #444;
-  display: block;
-	margin-top: 12px;
+    font-size: 12px;
+    color: #444;
+    display: block;
+    margin-top: 12px;
 }
 
 .start {
@@ -133,9 +129,18 @@ input:focus {
     text-align: center;
     width: 700px;
     margin: auto;
-    background-color: #3498DB
+    background-color: #3498DB;
+    box-shadow: 0px 10px 20px #000000;
 }
 
 .message {
     width:50%;
+}
+
+img {
+    border-radius: 20px;   
+}
+    
+.item {
+    height: 300px;
 }
