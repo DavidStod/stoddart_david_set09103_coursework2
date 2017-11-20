@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Coursework</title>
+        <!--connect to the css -->
+        <link rel="styleSheet" href="{{ url_for('static', filename='the.css')}}">
+    </head>
+    <body>
+        <ul>
+            <!--top bar-->
+            {% if session['logged_in'] %}
+            <li style="float:right"><a href="http://0.0.0.0:5000/logout">logout</a></li>
+            {% else %}
+            <li style="float:right"><a href="http://0.0.0.0:5000/log">login</a></li>
+            {% endif %}
+            <li style="float:left;"><a href="http://0.0.0.0:5000">Home</a></li>
+            <li style="padding-left:7%;"><a href="http://0.0.0.0:5000/guitar/body">Body</a></li>
+            <li style="padding-left:7%;"><a href="http://0.0.0.0:5000/guitar/neck">Neck</a></li>
+            <li style="padding-left:7%;"><a href="http://0.0.0.0:5000/guitar/pickups">Pickups</a></li>
+            <li style="padding-left:7%;"><a href="http://0.0.0.0:5000/guitar/bridge">Bridge</a></li>
+            <li style="padding-left:7%;"><a href="http://0.0.0.0:5000/basket">Basket</a></li>
+        </ul>
+        <div class="start">
+            {% block content %}{% endblock %}
+        </div>
+    </body>
+</html>

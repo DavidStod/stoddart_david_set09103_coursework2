@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+{% block content %}
+{% if session['logged_in'] %}
+    <h1>Welcome Back</h1>
+    {% else %}
+    <h1>Hi there, first time? </h1>
+    <h2>If not why not <a href="http://0.0.0.0:5000/log">login</a></h2>
+    {% endif %}
+    <h2>This website is a guitar parts seller you can select what you want to view via the top navigation bar or by using the buttons bellow</h2> 
+    <a href="http://0.0.0.0:5000/guitar/body"><img src={{url_for('static', filename='images/body1.png')}} width="240" height="240" /><a>
+    <a href="http://0.0.0.0:5000/guitar/neck"><img src={{url_for('static', filename='images/neck1.png')}} width="240" height="240"/><a>
+    <a href="http://0.0.0.0:5000/guitar/pickups"><img src={{url_for('static', filename='images/pickups1.png')}} width="240" height="240"/><a>
+    <a href="http://0.0.0.0:5000/guitar/bridge"><img src={{url_for('static', filename='images/bridge1.png')}} width="240" height="240"/><a>
+    <a href="http://0.0.0.0:5000/basket"><img src={{url_for('static', filename='images/basket.png')}} width="240" height="240" /><a>
+{% endblock %}
