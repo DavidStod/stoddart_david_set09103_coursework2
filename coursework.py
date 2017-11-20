@@ -1,6 +1,5 @@
 from flask import Flask
 from flask import Flask, flash, render_template, url_for, redirect, request, session, abort
-from flask import Flask, render_template, url_for, redirect, request, session, abort
 import os
 from sqlalchemy.orm import sessionmaker
 from tabledef import *
@@ -10,10 +9,9 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    #generate_img("images/image2");
-    #return '<ing src=' + url_for('static',filename='images/image2') + '>'
     return render_template('home.html')
 
+#if going to login screen and already logged in go to home if not go to login
 @app.route('/log/', methods=['GET', 'POST'])
 def login():
     if not session.get('logged_in'):
@@ -21,6 +19,7 @@ def login():
     else:
         return home()
 
+#has to be logged in to go to basket
 @app.route('/basket/', methods=['GET', 'POST'])
 def basket():
     if not session.get('logged_in'):
@@ -28,13 +27,14 @@ def basket():
     else:
         return render_template('basket.html')
 
+#Reads the user input and checks if its a valid login
 @app.route('/login/', methods=['POST'])
 def do_admin_login():
-
+    #get inputs
     POST_USERNAME = str(request.form['username'])
     POST_PASSWORD = str(request.form['password'])
     
-
+    #check database and if valid says its logged in
     Session = sessionmaker(bind=engine)
     s = Session()
     query = s.query(User).filter(User.username.in_([POST_USERNAME]), User.password.in_([POST_PASSWORD]) )
@@ -45,12 +45,13 @@ def do_admin_login():
         print('wrong password')
         flash('wrong password!')
     return login()
-
+#logs the user out
 @app.route('/logout/')
 def logout():
     session['logged_in'] = False
     return login()
 
+#basket code
 @app.route('/get_the_order/')
 def get_the_order():
     global the_order_list
@@ -69,26 +70,9 @@ def get_the_order():
 
     return jsonify(result=the_order_list + sum_list)
 
-@app.route('/guitar/<name>', methods=['GET', 'POST'])
-def maths():
-    for i in range(100):
-        if form.validate_on_submit():
-            if 'Add to basket' in request.form:
-                count = count + 1
-                return home()
-                print(count)
-            elif 'Remove from basket' in request.form:
-                if count == 0:
-                    count = count
-                    print(count)
-                elif count != 0:
-                    count = count - 1
-                    print(count)
-
 #open every page by reading it from the url
 @app.route('/guitar/<name>/', methods=['GET', 'POST'])
 def guitar(name=None):
-    count = 0
     return render_template('{0}.html'.format(name), name=name), 200
 
 if __name__ == "__main__":

@@ -9,6 +9,7 @@ engine = create_engine('sqlite:///tutorial.db', echo=True)
 Session = sessionmaker(bind=engine)
 session = Session()
 
+#create users
 user = User("admin","password")
 session.add(user)
 
